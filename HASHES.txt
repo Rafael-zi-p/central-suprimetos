@@ -1,0 +1,77 @@
+SHA-256 dos arquivos da entrega v3 (07/10/2026)
+
+85a9d22bb95bb2eb6f5dd0c21687e05ccb1dde84488bf2b931903bc7f9352005  banco/00-usuario-do-app.sql  1514 bytes
+007a0b60807c4e3c1318a501392827de59933db265f8f7c5f83db4be0d5cc1b0  banco/01-estrutura.sql  6552 bytes
+7ee6913e5151f5be25a623f56de94d4a639c71e4af36ba7e54ca7cc106601796  CHANGELOG.md  3288 bytes
+0ddd83aaa8a3d6a334188d31338309912541734e719f68a3514435e2b234c4df  CREDITOS.md  1665 bytes
+6b6540950c2deda155bfc203fb21b9c30055fc9afde4ca364ea834a7a2ceeeb0  docs/01-regras-de-negocio.md  14162 bytes
+e99e714b87f61c64bb04fffc5430b29754fa562d09f088556212c9d1db3c224b  docs/02-LGPD.md  11132 bytes
+bcb64d9c3fee7b12e28d9a36854ec23fd73aaf9ae961481e43ee44dfffaad2e6  docs/03-abas-o-que-cada-uma-precisa.md  4843 bytes
+ddbb88cbcca20da5541b3fccca9b0f79f7947a89c9db09b889dda11e81c02c03  docs/04-integracao-totvs.md  5820 bytes
+eea4a84972b3b27918d1ee35e97ceb2ca7e046d7d2b1d06f86dfea195f3b4edc  docs/assistente-ia-LEIA-ME.md  1672 bytes
+63035dfadb1c3ac40a84640700230e3790329c58e6b50935e7e42ede0e15c1ea  ENTREGA-COMPLETA.md  19802 bytes
+b87eaf2f86128fc5b279ac070e6afceb4bbcdf5230cd3e6747d12edce2c4a71a  LEIA-ME.md  2238 bytes
+679bf95e59c23e2a2fdcc7985bf0f5ef75d4f66c6574103efc3e2a943b939af8  RODAR-NO-PC.md  3655 bytes
+3fbf285fa61178b859cd1767ad8bff8ac29811504f81aa28d363b63376949b15  servidor/.dockerignore  47 bytes
+99a10a96bda9e96cde3afcf5b5892b84de738fc07c4d668bc03e97ffd8ed30b0  servidor/.env.exemplo  2723 bytes
+ae8f62cbb9218eaeeb25202215fa1da340c1468dabb29dd0270b12fe5d7f127a  servidor/.env.local.exemplo  854 bytes
+dd67f63715ca9b8fa2b070f72519682db3ef36204e3e6a0fac909dbf2d47b3ce  servidor/.gitignore  35 bytes
+3c8d82a32eb2bc25951f5c100f98c0802bf55fac3ca75a232c6ac23ddcf51823  servidor/app/__init__.py  3237 bytes
+5eb99d158d3ca05972ef67d434e79a1806d1e92fc0d63b4037e2c232e81dcc83  servidor/app/agenda.py  4371 bytes
+af57a6d0e1b524fac36dcb747b66e10c9890ac36500ea97b5403f6de9948092f  servidor/app/config.py  5523 bytes
+e7836fa20af89ff4aff5f7a9a6db0e55a8bb4ac0a8a645d00cdda47cdcb591a2  servidor/app/db.py  1221 bytes
+0594054574d4e9e77a1ce1fa569dc20ea5f3478d49d3a2586427ccec455bf45c  servidor/app/ia.py  4880 bytes
+61e58cee3b452df1508f3404573464a35d39b9f5eb29dacf8064d314a0110596  servidor/app/obras.py  4669 bytes
+a7de6a72ea725ee5f20656c7397923550c780fc6878dd8fadc83390153e17cd1  servidor/app/permissoes.py  6299 bytes
+88a0ab2adc1c4c861379c60e3e72d2c4e36170585da324619cd545037c01c690  servidor/app/rotas_app.py  11634 bytes
+9fda7e524bf12ca2ee5be99ceb24687573129a7cdc9a8a86baa02a0b9307f874  servidor/app/rotas_db.py  9452 bytes
+328367878791336e517113fae92aac03d5efd70157f84fc847c6050e0038ba79  servidor/app/static/apple-touch-icon.png  11934 bytes
+d6fc35ae6284ccd61606a6298d28b295b93220116171c4caf00e376ddd81cbba  servidor/app/static/icon-192.png  13207 bytes
+a95f373ba1d4def8421f86dbe2d0e4d94541f743c5d7fd7e93e102ec41cf3432  servidor/app/static/icon-512.png  80675 bytes
+4e07f55cbe5a3635a2146922c9a0fae7e000eb1bc0cd76d29c98cf24e7c86fcf  servidor/app/static/icon-maskable-512.png  44570 bytes
+4d7f07e649181b9edd16af3124e92a801ed3553701ca3b19c2bd293d66f8d226  servidor/app/static/index.html  2455559 bytes
+dbc97e0e03e5365a9fb3428fb15b14f5c25fb23327f27fa03a9a225bb838ba63  servidor/app/static/manifest.webmanifest  706 bytes
+18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780  servidor/app/static/qrcode-1.4.4.js  56694 bytes
+4a3e6d8e2321e5d332115deba8e6dcdba11679ed22ea2bae9a91595517c720d6  servidor/app/static/sw.js  2018 bytes
+cc015130aa8521e7f088f88898eba949ccdcbfb38df0bd129b44b7273c3a6f41  servidor/app/static/xlsx-0.20.3.full.min.js  951904 bytes
+d61444f2ad0144005a50de3fd42d62ab1d773f00cfa514249425dd4972c1f1ea  servidor/app/totvs_job.py  15132 bytes
+05cf13447b49a4c6466c8acf64cc8b48888cce5327c040c05335507811978cb8  servidor/app/usuario.py  3124 bytes
+e88ff40affefe98a75e9805d3c0a738dc173e267ea20b08092fd4da553136357  servidor/docker-compose.local.yml  1547 bytes
+6e7c354e5a1d686bcc8ca559f45226bb9483d855e92a0874baa94e3642010bec  servidor/Dockerfile  662 bytes
+7452452fd6264dc1303a7b0a9a73d25fe3a04abde27626cb488bd4cbc8620afb  servidor/gunicorn.conf.py  385 bytes
+cc1f29700e82e2e58df0fa230f96feb045a022d9b55900fee7c75e33493bd1f8  servidor/requirements.txt  419 bytes
+5020cae3187b8b42f0627d2daa6226c0d978170ebb3a8b3b09c2897a3a6e101b  servidor/testes/LEIA-ME.md  976 bytes
+7bebef60bf48abe8dbdd7e7dfefcf6511dba17d5517f99f71efa2ac2fba851db  servidor/testes/rodar_local.py  4438 bytes
+ba496dffc54baddf8af91ea502af2bc8ce16d8ed82619482f03b86bfe50cb1d0  servidor/testes/testar_agenda.py  3494 bytes
+e78cfa01a40cbd3fe98847d9d16003e548e44f46c4b857e1de50776e56a434b5  servidor/testes/testar_api.py  15308 bytes
+895e4c3e82f3aed2fa026badfc0f3040238665892a8c55ad187cef627b670c5d  servidor/wsgi.py  229 bytes
+97746cc526a9d8a799c993a3421a67dd220cdce51f679752920838958a8cdf05  TERCEIROS.md  2637 bytes
+2dcc12bf2a87ec46b4ff475579746ce4676fd636f6e502e78f0b13497c68d477  testes-de-aceite/casos.json  5625 bytes
+12929dc8718ffac6252c258700deabb356458da3f42fe2cf72e9e72c19fe9712  testes-de-aceite/README.md  1859 bytes
+4e879f9a27e7bb6bfd54e20392619792d03a4a0b4a00aa01ec0b1f216156df36  testes-de-aceite/rodar-no-app.js  3805 bytes
+3459d33b95f4a5136770cea0acc17bc1a40cd7f6f4fe3c56e54c3fd4f3de7da1  totvs-sql/CUBO.SUP.CRONO-otimizada.sql  5672 bytes
+09198113473d68247ac0b73264d265b849e5c488e30515fed4b2ba3c50b64d2a  totvs-sql/CUBO.SUP.FORN-fornecedores.sql  3614 bytes
+0157a449984c8186ff6d379ff1a4566f2d8284dfcfb6ce2128453d7816cc3367  totvs-sql/CUBO.SUP.OC-mes-a-mes.sql  27928 bytes
+7e6310a9978a488df9c3e9c320a649307180f1479c8208e660ee1147396d96d1  totvs-sql/CUBO.SUP.OC-otimizada.sql  24096 bytes
+ef86e97fde412b6288f2b88c724f9c7795dd803c55776cfd1e9d34c66a0b690d  totvs-sql/CUBO.SUP.OCDOC-pdf-da-oc.sql  9897 bytes
+18951e1e297005f0e21a3febafef83f89089f211fd8e4eaea4203e13db2c4c5a  totvs-sql/DIAG.APROV.OC-CANCELADAS.sql  2455 bytes
+d376ccb25250b129d5b05435fae32c7c5962df1a6070f658af5ed5f06d50cd27  totvs-sql/DIAG.APROV.OC-SIGNIFICADO.sql  1309 bytes
+45cd2460cdf4ca4c02ec6bbfb12b7a9f775f47a36ee4c01e9f6cdcc49307ffc7  totvs-sql/DIAG.APROV.OC-TABELAS.sql  675 bytes
+93014f5f7f75d2051eef988294392aeb5da7303ffb254ff7512e9cb1949dc153  totvs-sql/DIAG.APROV.OC.sql  926 bytes
+0399b41dba4cd825b442f8274319114c8cabcfad4428f5637b2acd0a4a716f04  totvs-sql/MAPA-orcamento-planejamento.sql  1685 bytes
+69529d3affbaa809234ab6f57b100fc87d28dcd14a18a6f0245a26a69ce8c46c  totvs-sql/montar-oc-otimizada.js  12069 bytes
+804b53bdb711c46ff0ea6a5b235b7eb71eb342c32fd6d73f08a8493d9d4d1b4d  totvs-sql/PARA-CRIAR-NO-RM.zip  13993 bytes
+7e6310a9978a488df9c3e9c320a649307180f1479c8208e660ee1147396d96d1  totvs-sql/PARA-CRIAR-NO-RM/1-CUBO.SUP.OC (substituir).sql  24096 bytes
+6feead02ad68cc71e95b8fae54f4ad10736f8cef1a0b6831f420c968019fe5ef  totvs-sql/PARA-CRIAR-NO-RM/10-CUBO.SUP.VERBAS (nova).sql  7353 bytes
+09198113473d68247ac0b73264d265b849e5c488e30515fed4b2ba3c50b64d2a  totvs-sql/PARA-CRIAR-NO-RM/2-CUBO.SUP.FORN (nova).sql  3614 bytes
+ef86e97fde412b6288f2b88c724f9c7795dd803c55776cfd1e9d34c66a0b690d  totvs-sql/PARA-CRIAR-NO-RM/3-CUBO.SUP.OCDOC (nova).sql  9897 bytes
+51943b06c980278f98082b8418f53144bd7dc2f0740e7f48de475bcf14cf72df  totvs-sql/PARA-CRIAR-NO-RM/4-CUBO.SUP.CRONO (substituir).sql  6427 bytes
+28c3a6745e9bd752d00c0627a4ba2593b44118e782d95f0ed8ac47af77b68388  totvs-sql/PARA-CRIAR-NO-RM/5-trecho para a CUBO.SUP.005 (alterar).sql  1728 bytes
+ddbb363dd8516140f887cc96515753f917c598da35e018901169f861cdb67a59  totvs-sql/PARA-CRIAR-NO-RM/6-CUBO.SUP.PROJ (nova).sql  2082 bytes
+dcc874173ae3017bb9607b18e622223ffcdd92ea7e63dac5c295bab12bc3f1af  totvs-sql/PARA-CRIAR-NO-RM/7-CUBO.SUP.ORCETAPA (nova).sql  3072 bytes
+f0cf08d5d2b5d64ca212bd670b0c356d9916fe0ff7c63957e0f6039657f630da  totvs-sql/PARA-CRIAR-NO-RM/8-CUBO.SUP.ORCXCOMP (nova).sql  8696 bytes
+b1b8cea69e90484e77c6113f7f2564772fd4172ca5829bf77eafeb7944b8b431  totvs-sql/PARA-CRIAR-NO-RM/9-CUBO.SUP.SEMETAPA (nova).sql  2335 bytes
+9a458808109be2e2330cc0ff5aef4b31acdd642087d1d228d2f975c81f36f502  totvs-sql/PARA-CRIAR-NO-RM/LEIA-ME.md  3660 bytes
+5c4ae85e843cd2684b67a519e1eb690f3d281f7389187718515183c77b600e1a  totvs-sql/PASSO-A-PASSO-PENDENCIAS-RM.md  3711 bytes
+04a09836b7c4dd52f68c794592347eedb8376a24dcf3e6261bffa73edcf73450  totvs-sql/README.md  3228 bytes
+28c3a6745e9bd752d00c0627a4ba2593b44118e782d95f0ed8ac47af77b68388  totvs-sql/SC-data-aprovacao.sql  1728 bytes

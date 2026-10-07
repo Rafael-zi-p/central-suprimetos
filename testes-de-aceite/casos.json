@@ -1,0 +1,70 @@
+{
+  "versao": "2.0 (04/10/2026)",
+  "observacao": "Cada caso informa a regra (docs/01-regras-de-negocio.md), a entrada e o resultado esperado. A versão nova deve produzir exatamente os mesmos valores. Datas aaaa-mm-dd. O ciclo usado é o padrão (limite 9, aprovação 10-13, reunião 15), sem ajuste mensal.",
+  "casos": [
+    { "id": "CIC-01", "regra": "§1 ciclo do mês", "funcao": "janelaDoMes",
+      "entrada": { "mes": "2026-02" },
+      "esperado": { "lim": "2026-02-09", "ini": "2026-02-10", "fim": "2026-02-13", "reu": "2026-02-15" } },
+
+    { "id": "APR-01", "regra": "§2 aprovação estimada pelo ciclo (SC criada até o limite)", "funcao": "janelaAprovEstimada",
+      "entrada": { "criacao": "2026-03-05" }, "esperado": "2026-03-13" },
+    { "id": "APR-02", "regra": "§2 SC criada depois do limite não tem estimativa (conta da criação)", "funcao": "janelaAprovEstimada",
+      "entrada": { "criacao": "2026-03-12" }, "esperado": "" },
+
+    { "id": "SLA-01", "regra": "§4 OC dentro do prazo", "funcao": "calcSLAStatus",
+      "entrada": { "inicio": "2026-03-13", "sla": { "sup": 10, "ent": 5, "total": 20 }, "dataOC": "2026-03-20" },
+      "esperado": { "dias": 7, "prazo": 10, "diff": -3, "comprado": true, "ok": true, "atrasado": false } },
+    { "id": "SLA-02", "regra": "§4 OC fora do prazo", "funcao": "calcSLAStatus",
+      "entrada": { "inicio": "2026-03-13", "sla": { "sup": 10, "ent": 5, "total": 20 }, "dataOC": "2026-03-30" },
+      "esperado": { "dias": 17, "prazo": 10, "diff": 7, "comprado": true, "ok": false, "atrasado": true } },
+
+    { "id": "VB-01", "regra": "§9 saldo sem coluna Saldo = Orçado − Realizado − Comprometido", "funcao": "vbSaldoLinha",
+      "entrada": { "orcado": 1000, "realizado": 300, "comprometido": 200 }, "esperado": 500 },
+    { "id": "VB-02", "regra": "§9 coluna Saldo, quando existe, vale direto", "funcao": "vbSaldoLinha",
+      "entrada": { "orcado": 1000, "saldo": 420, "realizado": 300, "comprometido": 200 }, "esperado": 420 },
+
+    { "id": "PRC-01", "regra": "§10 referência = média ponderada das compras anteriores; alerta acima de 15%", "funcao": "ocxPrecoRef / ocxPrecoAlto",
+      "entrada": { "historico": [
+          { "oc": "100", "data": "2026-07-01", "qtd": 100, "preco": 10 },
+          { "oc": "101", "data": "2026-08-01", "qtd": 50, "preco": 12 } ],
+        "nova": { "oc": "102", "data": "2026-09-01", "qtd": 20, "preco": 15 } },
+      "esperado": { "media": 10.6667, "n": 2, "ultimo": 12, "alertaPct": 40.625 } },
+
+    { "id": "CRO-01", "regra": "§14 item concluído: datas, prazos e saving", "funcao": "croCalc",
+      "entrada": { "categoriaSLA": { "nome": "TESTE ACEITE", "sup": 20, "ent": 10, "total": 60 },
+        "item": { "inicioPlan": "2026-12-01", "orcQtd": 10, "orcUnit": 1000, "dataSCman": "2026-09-05",
+                  "fechMan": "2026-11-05", "ctrQtdMan": 10, "ctrTotalMan": 9000 } },
+      "esperado": { "dataSol": "2026-10-02", "dataMax": "2026-09-09", "start": "2026-09-13", "limFech": "2026-10-22",
+        "slaObra": -4, "slaReal": 3, "stSup": "concluido", "stObra": "ok",
+        "orcTotal": 10000, "saving": 1000, "savingPct": 10, "varQtd": 0, "varPreco": 1000 } },
+    { "id": "CRO-02", "regra": "§14 fechamento em texto ('xx') conta como concluído e entra no saving", "funcao": "croCalc",
+      "entrada": { "categoriaSLA": { "nome": "TESTE ACEITE", "sup": 20, "ent": 10, "total": 60 },
+        "item": { "inicioPlan": "2026-12-01", "orcQtd": 10, "orcUnit": 1000, "fechTxt": "xx", "ctrQtdMan": 10, "ctrTotalMan": 9000 } },
+      "esperado": { "concSemData": true, "stSup": "concluido", "saving": 1000 } },
+    { "id": "CRO-03", "regra": "§14 total orçado digitado diferente de qtd × unitário prevalece", "funcao": "croCalc",
+      "entrada": { "categoriaSLA": { "nome": "TESTE ACEITE", "sup": 20, "ent": 10, "total": 60 },
+        "item": { "inicioPlan": "2026-12-01", "orcQtd": 142, "orcUnit": 15831.6, "orcTotalMan": 2003470, "fechMan": "2026-11-05", "ctrTotalMan": 1787302.55, "ctrQtdMan": 142 } },
+      "esperado": { "orcTotal": 2003470, "saving": 216167.45 } },
+
+    { "id": "MES-01", "regra": "§15 cada lado mudou uma chave diferente: as duas mudanças ficam", "funcao": "pzMesclar",
+      "entrada": { "base": { "a": 1, "b": 1 }, "local": { "a": 2, "b": 1 }, "servidor": { "a": 1, "b": 3 } },
+      "esperado": { "a": 2, "b": 3 } },
+    { "id": "MES-02", "regra": "§15 lista com id: exclusão local e inclusão no servidor são respeitadas", "funcao": "pzMesclar",
+      "entrada": { "base": [ { "id": 1, "v": 1 }, { "id": 2, "v": 1 } ],
+                   "local": [ { "id": 1, "v": 1 } ],
+                   "servidor": [ { "id": 1, "v": 1 }, { "id": 2, "v": 1 }, { "id": 3, "v": 1 } ] },
+      "esperado": [ { "id": 1, "v": 1 }, { "id": 3, "v": 1 } ] }
+  ],
+  "conferencia_com_dados_reais": {
+    "descricao": "Importação da planilha 'Cronograma de Compras e Contratações.xlsx' (Suprimentos, versão usada em 03/10/2026) no Cronograma, com as obras cadastradas.",
+    "esperado": {
+      "itens": 275, "obras": 9, "concluidos": 230,
+      "saving_por_obra": {
+        "Reserva Impperial": 2562334.88, "Vista Impper": 1047673.47, "Connect": 5260368.22,
+        "Real Park Mod. 02": 380489.34, "Real Park Mód. 03": 566165.96, "Legacy Impper": 7034426.87,
+        "Villas Impper": 1387548.03, "Prime Impper": 2993794.63, "Line Impper": 1892450.38
+      }
+    },
+    "nota": "Os savings acima são a soma da coluna 'Saving (R$)' da própria planilha; o app reproduziu os 9 valores. A data máxima de pedido pode diferir da planilha por decisão de regra (pendências A2 a A4)."
+  }
+}

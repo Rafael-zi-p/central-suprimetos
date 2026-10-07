@@ -1,0 +1,50 @@
+# Central de Suprimentos — teste no próprio PC (localhost), sem Coolify.
+# Sobe PostgreSQL + Redis + o app, com o mesmo Dockerfile da produção.
+#
+# Uso (na pasta servidor/):
+#   1. copie .env.local.exemplo para .env.local e preencha o Entra e o RM
+#   2. docker compose -f docker-compose.local.yml up --build
+#   3. abra http://localhost:3000
+#
+# Só para teste: o banco usa o usuário postgres e senha local, e o cookie da sessão
+# funciona sem HTTPS (COOKIE_SEGURO=0). Não use estas configurações em produção.
+
+services:
+  banco:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: automacoes
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: teste-local
+    ports:
+      - "54320:5432"            # para abrir o banco num cliente SQL, se quiser
+    volumes:
+      - dados-banco:/var/lib/postgresql/data
+      - ../banco/01-estrutura.sql:/docker-entrypoint-initdb.d/01-estrutura.sql:ro   # cria as tabelas na 1ª vez
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d automacoes"]
+      interval: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+
+  app:
+    build: .
+    env_file: .env.local
+    environment:
+      DATABASE_URL: postgresql://postgres:teste-local@banco:5432/automacoes
+      SESSION_REDIS_URL: redis://redis:6379/0
+      COOKIE_SEGURO: "0"
+      REDIRECT_URI: http://localhost:3000/getAToken
+      PORT: "3000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      banco:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+volumes:
+  dados-banco:
